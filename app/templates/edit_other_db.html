@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <style>
+           body{
+                background-image: linear-gradient(to right,#d8c3a5,#bab2b5);
+}      
+td{
+    font-family: 'Montserrat', sans-serif; 
+}
+h1{
+    font-family: 'Roboto', sans-serif;
+}
+        </style>
+    </head>
+<body style="background-color: #51e2f5">
+    
+    <center>
+        <h2>Edit the other database</h2>
+        <h4> record number: {{details.id}}</h4>
+        <form method="POST" action="/update_other/{{ details.id }}/">
+            {% csrf_token %}
+        <table border="1">
+            <tr><td>Aadhar number</td>
+            <td><input type="text" name="aadhar_no" value="{{details.aadhar}}"></td></tr>
+            <tr><td>Name</td>
+                <td><input type="text" name="name" value="{{details.Name}}"></td></tr>
+
+                
+            <tr><td>income</td>
+                <td><input type="text" name="income" value="{{ details.income }}"></td></tr>
+            <tr><td>Date of birth</td>
+                <td><input type="text" name="dob" value="{{ details.Dob }}"></td></tr>
+            <tr><td>State</td>
+                <td><input type="text" name="state" value="{{ details.state }}"></td></tr>
+            <tr><td>Pincode</td>
+                <td><input type="text" name="pincode" value="{{ details.pincode }}"></td></tr>
+                
+            <tr><td>disability</td>
+                <td><input type="text" name="disability" value="{{ details.disability }}"></td></tr>
+            <tr><td>gender</td>
+                <td><input type="text" name="gender" value="{{ details.gender }}"></td></tr>   
+            <tr><td>status</td>
+                <td><input type="text" name="status" value="{{ details.status }}"></td></tr>  
+            <tr><td>widow</td>
+                <td><input type="text" name="widow" value="{{ details.widow }}"></td></tr>
+            <tr style="height:38px;"><td>BPL Family id</td>
+                    <td><input type="text" name="bpl_family_id" value="{{ details.bpl_family_id }}"></td></tr>  
+            <tr style="height:38px;"><td>Widow</td>
+                    <td><input type="text" name="EPIC_id" value="{{ details.EPIC_id}}"></td></tr>    
+        </table>
+        <input type="submit" value="Update">
+        <a href="/other_db/"> Display Other Database</a>
+            {% if messages%}
+        {% for res in messages %}
+        {{res}}
+        {% endfor %}
+        {% endif %}    
+        </form>
+    </center>   
+</body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <style>
+           body{
+                background-image: linear-gradient(to right,#d8c3a5,pink);
+}      
+            th{
+    font-family: 'Montserrat', sans-serif; ;
+}
+h1{
+    font-family: 'Roboto', sans-serif;
+}
+        </style>
+    </head>
+    <body align="center">{% csrf_token %}
+        <h1>Output Details</h1>
+        <a href="/home/" ><button class="btn ">Home</button> </a>
+        <form >
+        <table border="1">
+            <tr>
+                <th> Aadhar number
+                </th>
+                <th>Name</th>
+                <th>Date of Birth</th>
+                <th>State</th>
+                <th>Pincode</th>
+                <th>Gender</th>
+                <th>disability status</th>
+                <th>income</th>
+                <th>Widow</th>
+                <th>BPL Family Id</th>
+                <th>EPIC Id</th>
+            </tr>
+            {% for x in  context %}
+            <tr>
+                <td>{{ x.aadhar }}</td>
+                <td>{{ x.Name }}</td>
+                <td>{{ x.Dob }}</td>
+                <td>{{ x.state }}</td>
+                <td>{{ x.pincode }}</td>
+                <td>{{ x.gender }}</td>
+                <td>{{ x.disability }}</td>
+                <td>{{ x.income }}</td>
+                <td>{{ x.widow}}</td>
+                <td>{{ x.bpl_family_id }}</td>
+                <td>{{ x.EPIC_id}}</td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+</body>
+</html>
+      

@@ -1,0 +1,146 @@
+.d-flex{
+    margin-left: 850px;
+}
+.form{
+    margin-left: 10px;
+}
+
+
+
+#div1{
+    margin-left: 890px;
+    margin-top: -35px;
+    
+}
+
+.divo{
+    
+    margin-left: 350px;
+
+}
+
+#div2{
+    margin-top: 100px;
+}
+
+
+.div{
+  
+    background-image: url("  https://nsap.nic.in/homepage/img/sliders/banner2.jpg");background-size:75% ;
+   
+    
+    height: 60%;
+    width: 180%;
+    background-repeat: no-repeat;
+    
+}
+
+
+.imag{
+    padding: 50px;
+}
+.press-logo {
+    width: 15%;
+    margin: 20px 20px 50px;
+  }
+
+#press {
+    
+    padding-bottom: 3%;
+    size: 10px;
+  }
+.input{
+    text-align: center;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 0px;
+
+}
+.section-heading{
+    text-align: center;
+}
+
+
+#ima-one{
+    margin-top: 20px;
+    margin-bottom: 25px;
+    padding: 20px;
+    height:px;
+}
+
+#ima-two{
+    height: 150px;
+}
+#country-state{
+    
+        /* Size and position */
+        position: relative; /* Enable absolute positioning for children and pseudo elements */
+        width: 200px;
+        padding: 10px;
+        margin: 0 auto;
+    
+        /* Styles */
+        background: lightblue;
+        color: #fff;
+        outline: none;
+        cursor: pointer;
+    
+        /* Font settings */
+        font-weight: bold;
+    
+}
+#p1{
+    border:5px solid red;
+    box-shadow:15px;
+}
+
+.site-footer {
+    background-color: #838383;
+      text-align: center;
+      margin: 10px 0;
+      padding: 10px 0;
+  }
+  
+  #social-wrapper {
+      text-align: center;
+  }
+  
+  /*Social Media Icons*/
+  .social-wrapper {
+      text-align: center;
+  }
+  
+  .social-wrapper ul li {
+      display: inline;
+      margin: 0 5px;
+  }
+  
+  .twitter-icon,
+  .facebook-icon,
+  .instagram-icon,
+  .linkedin-icon,
+  .googleplus-icon,
+  .youtube-icon,
+  .foursquare-icon{
+      margin-top: .625em;
+      width: 40px;
+      height: 40px;
+      opacity: .6;
+      filter: alpha(opacity=60); /* For IE8 and earlier */
+    border-radius: 25px;
+  }
+  
+  .twitter-icon:hover,
+  .facebook-icon:hover,
+  .instagram-icon:hover,
+  .linkedin-icon:hover,
+  .googleplus-icon:hover,
+  .youtube-icon:hover,
+  .foursquare-icon:hover {
+      opacity: 1.0;
+      filter: alpha(opacity=100); /* For IE8 and earlier */
+  }
+  
+  .footer-nav p {
+      text-align: center;
+  }

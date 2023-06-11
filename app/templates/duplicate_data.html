@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+<style>
+    body{
+        background-image:linear-gradient(#a28089,#9df9ef);
+}  
+
+#emt{
+background-color: black;
+}
+
+</style>
+    </head>
+    <div style="padding: 2%;" class="row">
+        <img src="https://pensionersportal.gov.in/img/emblem1.png" class="col-sm-1" alt="" class="d-inline-block align-text-top" style="width: 5% ; height: 10%; margin-left:1%;margin-right:0%;">
+        <h2 class="col-sm-6" style="margin-top:2.0%">Ministry of Rural Development</h2>
+      </div>
+    <body align="center">
+        <h1 align="center">Duplicate Data</h1>
+        <table align="center" border="1">
+            <tr>
+                <th> Aadhar number
+                </th>
+                <th>Name</th>
+                <th>Date of Birth</th>
+                
+                <th>Click to update faulty to 1</th>
+            </tr>
+            {% for x in  c %}
+            <tr>
+                <td>{{ x.aadhar_no }}</td>
+                <td>{{ x.name }}</td>
+                <td>{{ x.dob }}</td>
+                <td><a href="/edit_duplicate/{{  x.aadhar_no  }}">Edit</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="pagination">
+            <span class="step-links">
+                {% if page.has_previous %}
+                    <a href="?page=1">&laquo;
+                        first  </a>
+                    <a href="{% url 'check/' %}?page={{ page.previous_page_number }}">previous</a>
+                {% endif %}
+        
+                <span class="current">
+                    Page {{ page.number }} of {{ page.paginator.num_pages }}.
+                </span>
+        
+                {% if page.has_next %}
+                    <a href="?page={{ page.next_page_number }}">next </a>
+                    <a href="?page={{ page.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+
+        <a href="/home/" ><button class="btn ">Home</button> </a>
+    </body>
+</html>

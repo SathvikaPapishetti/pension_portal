@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    
+    <title>select</title>
+    <style>
+        #states {
+            overflow: auto;
+            height: 40%;
+            border: 1px rgb(133, 130, 130) solid;
+            width: 300px;
+            margin: 0 auto;
+            white-space: nowrap;
+            font-size: large;
+        }
+        body{
+            height: 1000px;
+            background-image: linear-gradient(to bottom right,#D2E4FD ,#ffc0cb );
+            background-repeat: no-repeat;
+            background-size: cover;
+
+
+        }
+    </style>
+</head>
+<body style="text-align: center;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+           <h4 style="text-align:center;margin-left: 278%;">
+            PENSION PORTAL
+
+           </h2> </a>
+        </nav>
+    <form method="POST">{% csrf_token%}
+        
+        <form method="POST">{% csrf_token%}<br><br>
+            <div style="margin-left:2%">
+            &emsp;&emsp;&emsp;&emsp;&emsp;Select Pension type:
+            &nbsp;&nbsp;<select name="pension" id="pension" style="border: solid 1px #ced4da;border-radius: 4px;height:30px ;">
+                <option value="1">IGNOAPS</option>
+                <option value="2">IGNWPS</option>
+                <option value="3">IGNDPS</option>
+            </select><br>
+            </div>
+            <div style="margin-left:2%">
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Select Sub Pension type:
+            &nbsp;&nbsp;<select type="sp" style="border: solid 1px #ced4da;border-radius: 4px;height:30px ;margin-top:2%;">
+                <option value="1">Below 80 years</option>
+                <option value="2">Above 80 years</option>
+                <option value="3">Both</option>
+            </select><br>
+        </div>
+    </br>
+    <label >select state</label>
+    <input type="radio" name="st" value="1" onclick="hidden_states()">All states
+    <input type="radio" name="st" value='0' onclick="visible_states()">select states
+    
+<div id="states" style="visibility:hidden;height: 40%;" >
+       
+<label class="checkbox">
+    
+    States :<br>
+    <input type="checkbox" name="state"  value="Andaman and Nicobar Islands">Andaman and Nicobar Islands<br>
+    <input type="checkbox" name="state"  value="Andhra Pradesh">Andhra Pradesh <br>
+    <input type="checkbox" name="state"  value="Arunachal Pradesh">Arunachal Pradesh<br>
+    <input type="checkbox" name="state" value="Assam">Assam</br>
+    <input type="checkbox" name="state" value="Bihar">Bihar</br>
+    <input type="checkbox" name="state" value="Chandigarh">Chandigarh</br>
+    <input type="checkbox" name="state" value="Chhattisgarh">Chhattisgarh</br>
+    <input type="checkbox" name="state" value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</br>
+    <input type="checkbox" name="state" value="Daman and Diu">Daman and Diu</br>
+    <input type="checkbox" name="state" value="Delhi">Delhi</br>
+    <input type="checkbox" name="state" value="Lakshadweep">Lakshadweep</br>
+    <input type="checkbox" name="state" value="Puducherry">Puducherry</br >
+    <input type="checkbox" name="state" value="Goa">Goa</br>
+    <input type="checkbox" name="state" value="Gujarat">Gujarat</br>
+    <input type="checkbox" name="state" value="Haryana">Haryana</br>
+    <input type="checkbox" name="state" value="Himachal Pradesh">Himachal Pradesh</br>
+    <input type="checkbox" name="state" value="Jammu and Kashmir">Jammu and Kashmir</br>
+    <input type="checkbox" name="state" value="Jharkhand">Jharkhand</br>
+    <input type="checkbox" name="state" value="Karnataka">Karnataka</br>
+    <input type="checkbox" name="state" value="Kerala">Kerala</br>
+    <input type="checkbox" name="state" value="Madhya Pradesh">Madhya Pradesh</br>
+    <input type="checkbox" name="state" value="Maharashtra">Maharashtra</br>
+    <input type="checkbox" name="state" value="Manipur">Manipur</br>
+    <input type="checkbox" name="state" value="Meghalaya">Meghalaya</br>
+    <input type="checkbox" name="state" value="Mizoram">Mizoram</br>
+    <input type="checkbox" name="state" value="Nagaland">Nagaland</br>
+    <input type="checkbox" name="state" value="Odisha">Odisha</br>
+    <input type="checkbox" name="state" value="Punjab">Punjab</br>
+    <input type="checkbox" name="state" value="Rajasthan">Rajasthan</br>
+    <input type="checkbox" name="state" value="Sikkim">Sikkim</br>
+    <input type="checkbox" name="state" value="Tamil Nadu">Tamil Nadu</br>
+    <input type="checkbox" name="state" value="Telangana">Telangana</br>
+    <input type="checkbox" name="state" value="Tripura">Tripura</br>
+    <input type="checkbox" name="state" value="Uttar Pradesh">Uttar Pradesh</br>
+    <input type="checkbox" name="state" value="Uttarakhand">Uttarakhand</br>
+    <input type="checkbox" name="state" value="West Bengal">West Bengal</br>
+    </div>
+    <p id="sts"></p>
+    
+    <input type = "button" value = "Get" id="get" onclick = "GetSelected()"  style="visibility:hidden;"" />
+    <div id="areas" style="height: 30px;visibility: hidden;">
+        <h3>Area:</h3>
+    <input type="radio" name="area" value="1" onclick="hidepin()">Whole State
+    <input type="radio" name="area" value='0' onclick="enterpin()">Enter a pincode
+      </div>
+      <div id="pin" style="visibility:hidden ; height:20px;">
+      <label>area pincode</label>
+      <input type="text" name="pin" id="pin">
+      </div>
+      <button type="submit" onclick="onsubmit()">submit</button>
+</form>
+</body>
+<script>
+    function visible_states(){
+       document.getElementById('states').style.visibility='visible';
+       document.getElementById('states').style.height='100px';
+       document.getElementById('get').style.visibility="visible";
+    }
+    function hidden_states(){
+       document.getElementById('states').style.visibility='hidden';
+       document.getElementById('states').style.height='20px';
+       
+    }
+
+    function GetSelected() {
+        var selected = new Array();
+        var tblFruits = document.getElementById("states");
+        var chks = tblFruits.getElementsByTagName("INPUT");
+ 
+        // Loop and push the checked CheckBox value in Array.
+        for (var i = 0; i < chks.length; i++) {
+            if (chks[i].checked) {
+                selected.push(chks[i].value);
+            }
+        }
+ 
+        //Display the selected CheckBox values.
+        if (selected.length > 1) {
+            document.getElementById('sts').innerHTML='selected states :'+ selected.join(",");
+        }
+        else if (selected.length==1) {
+            document.getElementById('areas').style.visibility='visible';
+            document.getElementById('areas').style.height='100px';
+        } else {
+            alert('select a state');
+        }
+    };
+    function onsubmit(){
+        pin= parseInt(document.getElementById('pin')).value;
+        r= document.getElementById('state').value;
+        document.write(r)
+        if (r=="Andaman and Nicobar Islands"){
+            if (pin>744304 || pin<744101){
+            document.write("Invalid Pincode");
+        }}
+    else if (r=="Andhra Pradesh"){
+        if (pin>535594 || pin<507103){
+            document.write("Invalid Pincode");
+        }
+            }
+    else if (r=="Arunachal Pradesh"){
+        if (pin>792131 || pin<790001){
+            document.write("Invalid Pincode");
+        }
+             }
+    else if (r=="Assam"){
+        if (pin>788931 || pin<781001){
+            document.write("Invalid Pincode");   
+        }
+    else if (r=="Bihar"){
+        if (pin>855117 || pin<800001){
+            document.write("Invalid Pincode");
+        }
+            }
+    else if (r=="Chandigarh"){
+        if (pin>160102 || pin<140119){
+            document.write("Invalid Pincode");
+        }
+    }
+    else if (r=="Chattisgarh"){
+        if (pin>497778 || pin<490001){
+            document.write("Invalid Pincode");
+        }}
+    else if (r=="Dadra Nagar Haveli"){
+        if (pin>396240 || pin<396193){
+            document.write("Invalid Pincode");
+            }}
+    else if (r=="Daman Diu"){
+        if (pin>396220 || pin<362520){
+            document.write("Invalid Pincode");
+            }}
+    else if (r=="Delhi"){
+        if (pin>110097 || pin<110001){
+        document.write("Invalid Pincode");}}
+    else if (r=="Goa"){
+        if (pin>403806 || pin<403001){
+            document.write("Invalid Pincode");
+        }}
+    else if (r=="Gujarat"){
+        if (pin>396590 || pin<360001){
+            document.write("Invalid Pincode");}}
+    else if (r=="Haryana"){
+        if (pin>136156 || pin<121001){
+            document.write("Invalid Pincode");}}
+    else if (r=="Himachal Pradesh"){
+        if (pin>177601 || pin<171001){
+            document.write("Invalid Pincode");}}
+    else if (r=="Jammu Kashmir"){
+        if (pin>194404 || pin<180001){
+            document.write("Invalid Pincode");}}
+    else if (r=="Jharkhand"){
+        if (pin>835325 || pin<813208){
+            document.write("Invalid Pincode");}}
+    else if (r=="Karnataka"){
+        if (pin>591346 || pin<560001){
+        document.write("Invalid Pincode");}}
+    else if (r=="Kerala"){
+        if (pin>6956115 || pin<670001){
+            document.write("Invalid Pincode");}}}
+    else if (r=="Lakshadweep"){
+        if (pin>682559 || pin<682551){
+            document.write("Invalid Pincode");}}
+    else if (r=="Madhya Pradesh"){
+        if (pin>488448 || pin>450001){
+            document.write("Invalid Pincode");}}
+    else if (r=="Maharashtra"){
+        if (pin>445402 || pin<400001){
+            document.write("Invalid Pincode");}}
+    else if (r=="Manipur"){
+        if (pin>795159 || pin<795001){
+            document.write("Invalid Pincode");}}
+    else if (r=="Meghalaya"){
+        if (pin>794115 || pin<783123){
+            document.write("Invalid Pincode");}}
+    else if (r=="Mizoram"){
+        if (pin<=796901 || pin>=796001){
+            document.write("Invalid Pincode");}}
+    else if (r=="Nagaland"){
+        if (pin>798627 || pin<797001){
+            document.write("Invalid Pincode");}}
+    else if (r=="Odisha"){
+        if (pin>770076 || pin<751001){
+            document.write("Invalid Pincode");}}
+    else if (r=="Pondicherry"){
+        if (pin<=673310 || pin>=533464){
+            document.write("Invalid Pincode");}}
+    else if (r=="Punjab"){
+        if (pin>160104 || pin<140001){
+        document.write("Invalid Pincode");}}
+    else if (r=="Rajasthan"){
+        if (pin<=345034 || pin>=301001){
+            document.write("Invalid Pincode");}}
+    else if (r=="Sikkim"){
+        if (pin>737139 || pin<737101){
+            document.write("Invalid Pincode");}}
+    else if (r=="Tamil Nadu"){
+        if (pin<=643253 || pin>=600001){
+            document.write("Invalid Pincode");}}
+    else if (r=="Telangana"){
+        if (pin>509412 || pin<500001){
+            document.write("Invalid Pincode");}}
+    else if (r=="Tripura"){
+        if (pin>799290 || pin<799001){
+            document.write("Invalid Pincode");}}
+    else if (r=="Uttar Pradesh"){
+        if (pin>285223 || pin<201001){
+            document.write("Invalid Pincode");}}
+    else if (r=="Uttarakhand"){
+        if (pin>385223 || pin<201001){
+            document.write("Invalid Pincode");}}
+    else if (r=="West Bengal"){
+        if (pin>700001 || pin<743711){
+            document.write("Invalid Pincode");}}
+    }
+    function enterpin(){
+        document.getElementById('pin').style.visibility='visible';
+        document.getElementById('pin').style.height='50px';
+    }
+    
+    function hidepin(){
+        document.getElementById('pin').style.visibility='hidden';
+        document.getElementById('pin').style.height='20px';
+    }
+</script>
+
+</html>
+
+
+
